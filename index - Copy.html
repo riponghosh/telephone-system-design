@@ -30,7 +30,7 @@
             <td class="edit">38</td>
             <td class="edit">1050</td>
           </tr>
-          <tr id='addr0'>
+          <tr>
             <td class="edit">3</td>
             <td class="edit">5</td>
             <td class="edit">50</td>
@@ -39,7 +39,6 @@
           
         </tbody>
       </table>
-      <a id="add_row" class="btn btn-default btn-xs" onclick="repeat()">Add Row</a><a id='delete_row' class="btn btn-default btn-xs float-right" onclick="deleted()">Delete Row</a>
     </div>
     <div class="col-md-1"></div>
     <div class="col-md-5">
@@ -138,7 +137,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr id="addr20">
+            <tr>
               <td class="edit">1</td>
               <td class="edit">4</td>
               <td class="edit">38</td>
@@ -146,7 +145,6 @@
             
           </tbody>
         </table>
-        <a id="add_row" class="btn btn-default btn-xs" onclick="repeat2()">Add Row</a><a id='delete_row' class="btn btn-default btn-xs float-right" onclick="deleted2()">Delete Row</a>
       </div>
       
     </div>
@@ -187,40 +185,6 @@
   $( ".edit" ).each(function() {
      $(this).attr('contentEditable', true);
 });
-</script>
-<script type="text/javascript">
-    var i = 0;
-    var original = document.getElementById('addr0');
-
-    function repeat() {
-      var clone = original.cloneNode(true);
-      clone.id = "addr" + (++i);
-      original.parentNode.appendChild(clone);
-    }
-
-    function deleted() {
-      var nested = document.getElementById("addr"+ (i));
-      original.parentNode.removeChild(nested);
-      i--;
-    }
-
-</script>
-<script type="text/javascript">
-    var j = 0;
-    var original2 = document.getElementById('addr20');
-
-    function repeat2() {
-      var clone2 = original2.cloneNode(true);
-      clone2.id = "addr2" + (++j);
-      original2.parentNode.appendChild(clone2);
-    }
-
-    function deleted2() {
-      var nested2 = document.getElementById("addr2"+ (j));
-      original2.parentNode.removeChild(nested2);
-      j--;
-    }
-
 </script>
 </body>
 </html>
